@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello!
-	
-	123456
+	hello index
 </body>
 </html>
