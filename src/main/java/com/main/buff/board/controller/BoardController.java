@@ -1,5 +1,7 @@
 package com.main.buff.board.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +14,8 @@ import com.main.buff.common.vo.BoardVO;
 @Controller
 public class BoardController {
 
+	private static final Logger LOGGER = LogManager.getLogger(BoardController.class);
+
 	@Autowired
 	private BoardService boardService;
 	
@@ -23,6 +27,7 @@ public class BoardController {
 			paramVO = new BoardVO();
 			paramVO.setBoard_id("1");
 			System.out.println("paramVO : "+paramVO.toString());
+			LOGGER.info("log -> " + paramVO.toString());
 			int cnt = boardService.boardCnt(paramVO);
 			
 			mav.addObject("cnt", cnt);

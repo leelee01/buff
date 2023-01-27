@@ -7,6 +7,9 @@
 	</sql>
 	
 	<select id="boardCnt" parameterType="BoardVO" resultType="int">
-		SELECT COUNT(BOARD_ID) FROM test.tb_board WHERE BOARD_ID = #{board_id}
+		SELECT 
+			COUNT(BOARD_ID) 
+		FROM test.tb_board 
+		WHERE BOARD_ID = #{board_id}
 	</select>
 </mapper>
