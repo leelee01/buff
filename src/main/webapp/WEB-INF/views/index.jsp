@@ -7,17 +7,19 @@
 </head>
 
 <body>
-	hello index
+<div>
+	hello main
 	
-	<button id="testBtn">test</button>
-	
+	<p>게시판</p>
+	<button id="boardBtn">이동</button>
+</div>	
 <form name="frm_menu" method="post">
 	<input type="hidden" name="test" value="test" />
 </form>
 
 <script>
 
-	$('#testBtn').on('click', function(){
+	$('#boardBtn').on('click', function(){
 		goMenu('/board/list');
 	});
 	
