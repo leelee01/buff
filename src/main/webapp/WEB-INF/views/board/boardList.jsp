@@ -54,6 +54,9 @@
 
 <script>
 $(function(){
+	
+	console.log("resultList", '${resultList}');
+	
     $("#jsGrid1").jsGrid({
         height: "100%",
         width: "100%",

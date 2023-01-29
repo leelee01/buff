@@ -15,12 +15,12 @@ public class BoardServiceImpl implements BoardService{
 	private BoardMapper boardMapper;
 
 	@Override
-	public List<BoardVO> boardList(BoardVO paramVO) throws Exception {
-		return boardMapper.boardList(paramVO);
+	public int boardListCnt(BoardVO paramVO) throws Exception {
+		return boardMapper.boardListCnt(paramVO);
 	}
 
 	@Override
-	public int boardCnt(BoardVO paramVO) throws Exception {
-		return boardMapper.boardCnt(paramVO);
+	public List<BoardVO> boardList(BoardVO paramVO) throws Exception {
+		return boardMapper.boardList(paramVO);
 	}
 }

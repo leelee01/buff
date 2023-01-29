@@ -1,5 +1,8 @@
 package com.main.buff.board.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,21 +24,27 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/list")
 	public ModelAndView selectBoardList(@ModelAttribute BoardVO paramVO) {
+		LOGGER.debug("공지사항 리스트 페이지 시작");
 		ModelAndView mav = new ModelAndView("board/boardList");
+		List<BoardVO> resultList = new ArrayList<BoardVO>();
+		int totalCount = 0;
 		
 		try {
-			paramVO = new BoardVO();
-			paramVO.setBoard_id("1");
-			LOGGER.info("log -> " + paramVO.toString());
-			int cnt = boardService.boardCnt(paramVO);
+			// list
+			totalCount = boardService.boardListCnt(paramVO);
 			
-			mav.addObject("cnt", cnt);
+			if(totalCount > 0) {
+				resultList = boardService.boardList(paramVO);
+				mav.addObject("resultList", resultList);
+			}
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		LOGGER.debug("공지사항 리스트 페이지 끝");
 		mav.addObject("paramVO", paramVO);
+		mav.addObject("totalCount", totalCount);
 		return mav;
 	}
 }
