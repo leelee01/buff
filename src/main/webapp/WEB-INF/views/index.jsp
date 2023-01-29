@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/views/common/include/style.jsp" %>
 <%@ include file="/WEB-INF/views/common/include/script.jsp" %>
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition dark-mode sidebar-mini">
 <div class="wrapper">
 	<!-- header -->
 	<%@ include file="/WEB-INF/views/common/include/header.jsp" %>
