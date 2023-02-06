@@ -10,7 +10,11 @@ public class BoardVO {
 	// alt + shift + a = 화면 수정모드로 바꾸는 단축키
 	
 	private String board_id;
-	private String board_gbn;
+	private String board_code;
+	private String title;
+	private String contents;
+	private String view_cnt;
+	private String anser_yn;
 	
 	// getter, setter
 //	public String getBoard_id() {
